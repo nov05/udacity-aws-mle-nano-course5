@@ -1,0 +1,38 @@
+{
+    "IamFleetRole": "arn:aws:iam::026211625715:role/aws-ec2-spot-fleet-tagging-role",
+    "AllocationStrategy": "priceCapacityOptimized",
+    "TargetCapacity": 1,
+    "ValidFrom": "2024-12-09T05:15:18.000Z",
+    "ValidUntil": "2025-12-09T05:15:18.000Z",
+    "TerminateInstancesWithExpiration": true,
+    "Type": "request",
+    "TargetCapacityUnitType": "units",
+    "LaunchSpecifications": [
+        {
+            "ImageId": "ami-0166fe664262f664c",
+            "BlockDeviceMappings": [
+                {
+                    "DeviceName": "/dev/xvda",
+                    "Ebs": {
+                        "DeleteOnTermination": true,
+                        "SnapshotId": "snap-031230058363026e6",
+                        "VolumeSize": 8,
+                        "VolumeType": "gp2",
+                        "Encrypted": false
+                    }
+                }
+            ],
+            "SubnetId": "subnet-0f998869f2ecdaba0, subnet-025844469a52b402f, subnet-0e9160fcb218b8d28, subnet-05aaec911556076fd, subnet-03b9d1a86fff43ecc, subnet-0a11bfcb8430b867e",
+            "InstanceRequirements": {
+                "ExcludedInstanceTypes": [],
+                "AllowedInstanceTypes": [],
+                "VCpuCount": {
+                    "Min": 1
+                },
+                "MemoryMiB": {
+                    "Min": 1024
+                }
+            }
+        }
+    ]
+}
