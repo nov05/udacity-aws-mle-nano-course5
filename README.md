@@ -12,7 +12,7 @@
   [notebook](https://github.com/nov05/udacity-aws-mle-nano-course5/blob/main/exercise_3.5/multiinstancestarterfile.ipynb)  
 
 * 3.13 Exercise: Manifest Files  
-  [notebook](https://github.com/nov05/udacity-aws-mle-nano-course5/blob/main/excercise_3.13/manifestfilestarter.ipynb)  
+  [notebook](https://nbviewer.org/github/nov05/udacity-aws-mle-nano-course5/blob/main/excercise_3.13/manifestfilestarter.ipynb)  
 
 * 4.8 Exercise: Autoscaling
 
