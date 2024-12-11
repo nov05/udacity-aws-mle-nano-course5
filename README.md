@@ -14,7 +14,10 @@
 * 3.13 Exercise: Manifest Files  
   [notebook](https://nbviewer.org/github/nov05/udacity-aws-mle-nano-course5/blob/main/excercise_3.13/manifestfilestarter.ipynb)  
 
-* 4.8 Exercise: Autoscaling
+* 4.8 Exercise: Autoscaling   
+  [notebook](https://github.com/nov05/udacity-aws-mle-nano-course5/blob/main/excercise_4.8/simpleendpoint1.ipynb)    
+
+
 
 ---  
 
