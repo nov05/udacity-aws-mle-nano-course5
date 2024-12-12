@@ -17,7 +17,8 @@
 * 4.8 Exercise: Autoscaling   
   [notebook](https://github.com/nov05/udacity-aws-mle-nano-course5/blob/main/excercise_4.8/simpleendpoint1.ipynb)    
 
-
+* 4.16 Exercise: Feature Store   
+  [notebook from Lesson 4](https://github.com/nov05/udacity-nd009t-C2-Developing-ML-Workflow/blob/master/lesson4/exercises-solutions.ipynb)  
 
 ---  
 
