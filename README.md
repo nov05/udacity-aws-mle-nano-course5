@@ -1,37 +1,40 @@
 # 🟢 **udacity-aws-mle-nano-course5**
 **Udacity AWS Machine Learning Engineers Nanodegree** (ND189)    
 
-## **👉 Project 4 Submission**  
+<br><br><br>  
 
-* Step 1: Training and deployment on Sagemaker  
+## **👉 Project 4 (Course 5) Submission**  
 
-  * Check [the screenshots](https://docs.google.com/document/d/1SJTQBwdd3jptwA0SDJCbmpsjjIWyN9h1s9LYEoFcw_U)  
+* **Step 1: Training and deployment on Sagemaker**  
 
-  * Set up VPC   
+  * Check [the screenshots](https://docs.google.com/document/d/1SJTQBwdd3jptwA0SDJCbmpsjjIWyN9h1s9LYEoFcw_U)   
+    Check [the training and deployment notebook](https://github.com/nov05/udacity-aws-mle-nano-course5/blob/main/train_and_deploy-solution.ipynb)   
+
+  * **Set up VPC**     
      
     Since my current role doesn't have the permissions to create an `Internet Gateway`, `NAT Gateway`, or assign an `Elastic IP` address, I set up a SageMaker notebook instance in the default VPC's public subnet in one of the Availability Zones. I enabled direct internet access for the instance so the notebook kernel can update Python libraries.
 
-  * Set up S3 bucket  
+  * **Set up S3 bucket**  
 
-    The dog images uploaded for Project 2 from an S3 bucket in another account was reused. To do this, I created an `S3 Gateway` endpoint within the VPC and updated the S3 bucket policy to enable cross-account access.
+    The dog images uploaded for Project 3 from an S3 bucket in another account was reused. To do this, I created an `S3 Gateway` endpoint within the VPC and updated the S3 bucket policy to enable cross-account access.
 
-  * Training
+  * **Training**
 
     The `train_and_deploy-solution.ipynb` and `hpo.py` files were uploaded to the notebook instance and ran the notebook. The HPO job, which had 2 runs on an `ml.g4dn.xlarge` instance, took about 40 minutes. Afterward, using the 'best hyperparameters,' I ran a multi-instance training job on two `ml.g4dn.xlarge` instances.
 
     I chose the `ml.g4dn.xlarge` instance because it's one of the smaller GPU options, and it worked very well for the image classification task in Project 3 training.
 
-  * Deployment
+  * **Deployment**
 
     The `inference2.py` file was uploaded to the notebook instance, deployed an inference endpoint, and tested it. Since the focus of this project is on ML operations, inference accuracy isn't the primary concern.
 
-  * Clean up resources
+  * **Clean up resources**
 
     Afterwards, the model, endpoint, and notebook instance were deleted.  
     
 
    
-
+<br><br><br>
 
 ## **Course 5** Operationalizing Machine Learning on SageMaker   
 
@@ -59,7 +62,7 @@
 * 6.1 Course Project   
   [Introduction](https://www.evernote.com/shard/s139/u/0/sh/1db5a63a-b7d4-4f4b-8f83-b6f68e86dbc2/supBQKkZk60tY8YA6uYPBsHIJKuX6N9771fFguFETNqIZwsYHa1Z0fTtlA)  
 
----  
+<br><br><br>    
 
 ## **Logs**     
 
