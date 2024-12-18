@@ -1,0 +1,45 @@
+[
+    {
+        "Version": "2012-10-17",
+        "Id": "Enforce HTTPS",
+        "Statement": [
+            {
+                "Sid": "PublicAccessForBucket",
+                "Effect": "Allow",
+                "Principal": "*",
+                "Action": [
+                    "s3:ListBucket",
+                    "s3:GetObject",
+                    "s3:PutObject"
+                ],
+                "Resource": [
+                    "arn:aws:s3:::p3-dog-breed-image-classification",
+                    "arn:aws:s3:::p3-dog-breed-image-classification/*"
+                ],
+                "Condition": {
+                    "Bool": {
+                        "aws:SecureTransport": "true"
+                    }
+                }
+            }
+        ]
+    }
+    ,
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Sid": "CrossAccountAccessForBucket",
+                "Effect": "Allow",
+                "Principal": {
+                    "AWS": "arn:aws:iam::026211625715:role/service-role/AmazonSageMaker-ExecutionRole-20241209T041445"
+                },
+                "Action": "s3:*",
+                "Resource": [
+                    "arn:aws:s3:::p3-dog-breed-image-classification",
+                    "arn:aws:s3:::p3-dog-breed-image-classification/*"
+                ]
+            }
+        ]
+    }   
+]
