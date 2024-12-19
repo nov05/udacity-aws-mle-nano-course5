@@ -3,7 +3,7 @@
 
 <br><br><br>  
 
-## **👉 Project 4 (Course 5) Submission**  
+## **👉 Project 4 (Course 5) Writeup Submission**  
 
 * **Step 1: Training and deployment on Sagemaker**  
 
@@ -12,11 +12,11 @@
 
   * **Set up VPC**     
      
-    Since my current role doesn't have the permissions to create an `Internet Gateway`, `NAT Gateway`, or assign an `Elastic IP` address, I set up a SageMaker notebook instance in the default VPC's public subnet in one of the Availability Zones. I enabled direct internet access for the instance so the notebook kernel can update Python libraries.
+    Since my current AWS role doesn't have the permissions to create an `Internet Gateway`, `NAT Gateway`, or assign an `Elastic IP` address, I set up a SageMaker notebook instance in the default VPC's public subnet in one of the Availability Zones, using the launch-wizard-1 Security Group, which allows all inbound and outbound traffic. I enabled direct internet access for the instance so the notebook kernel can update Python libraries.
 
   * **Set up S3 bucket**  
 
-    The dog images uploaded for Project 3 from an S3 bucket in another account was reused. To do this, I created an `S3 Gateway` endpoint within the VPC and updated the S3 bucket policy to enable cross-account access.
+    The dog images uploaded for Project 3 from an S3 bucket in another account was reused. To do this, I created an `S3 Gateway` endpoint within the VPC and updated the S3 bucket policy to enable **cross-account access**.
 
   * **Training**
 
@@ -31,12 +31,34 @@
   * **Clean up resources**
 
     Afterwards, the model, endpoint, and notebook instance were deleted.  
-    
 
+<br>  
+
+* **Step 2: EC2 Training**   
+
+  * Check [the operation details and screenshots](https://docs.google.com/document/d/1rQNjzYOEKrZ3y9Jd0TLPLukJ3qLOw354xQA9wTCkTQ0)    
+  * Since the demo training code doesn't appear to use a GPU, we launched a `t2.xlarge` CPU EC2 instance for the training.  
+  * Image: Amazon Linux 2023 AMI   
+    Intance type: `t2.xlarge` (w/o GPU)  
+    Security group: launch-wizard-1 (all inbound/outbound traffic allowed)  
+    Role name: udacity-p4-ec2 (permissions: `AmazonElasticMapReduceforEC2Role`, SageMaker execution role, and S3 full access)  
+    Dependencies: `torch`, `torchvision`, `Pillow` (including `Numpy`), `tqdm`   
+
+<br>
+
+* **Step 3: Lambda function setup**  
+
+<br>
+
+* **Step 4: Security and testing**  
+
+<br>
+
+* **Step 5: Concurrency and auto-scaling**   
    
 <br><br><br>
 
-## **Course 5** Operationalizing Machine Learning on SageMaker   
+## **Course 5 Operationalizing Machine Learning on SageMaker**   
 
 * Course notes  
   [Google Docs](https://docs.google.com/document/d/1B-k7xFlayJ00NrplcPeRvgP8dxsMggOmTabE135bCEw)  
