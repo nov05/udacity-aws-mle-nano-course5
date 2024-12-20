@@ -41,24 +41,48 @@
 
   * Since the demo training code doesn't appear to use a GPU, we launched a `t2.xlarge` CPU EC2 instance for the training. Obviously, SageMaker is a fully managed service that saves the hassle of installing GPU drivers, CUDA, Python dependencies, and more. However, managing resources ourselves could potentially reduce costs.   
 
-  * Image: Amazon Linux 2023 AMI   
-    Intance type: `t2.xlarge` (w/o GPU)  
-    Security group: launch-wizard-1 (all inbound/outbound traffic allowed)  
-    Role name: udacity-p4-ec2 (permissions: `AmazonElasticMapReduceforEC2Role`, SageMaker execution role, and S3 full access)  
+  * Image: `Amazon Linux 2023 AMI`   
+    Intance type: `t2.xlarge` (w/o GPU)    
+    VPC: the default VPC (same as Step 1)    
+    Security group: `launch-wizard-1` (all inbound/outbound traffic allowed)  
+    Role name: `udacity-p4-ec2` (permissions: `AmazonElasticMapReduceforEC2Role`, SageMaker execution role, and S3 full access)  
     Dependencies: `torch`, `torchvision`, `Pillow` (including `Numpy`), `tqdm`   
 
 <br>
 
 * **Step 3: Lambda function setup**  
-
-<br>
-
 * **Step 4: Security and testing**  
-
-<br>
-
 * **Step 5: Concurrency and auto-scaling**   
-   
+
+  * Check the operation details and screenshots  
+    Check the deployment notebook and Lambda function code
+
+  * I deployed the model as an endpoint called `p4-dog-image-classification`. It takes the endpoint name and an image URL as input, and outputs a prediction in the form of a label number (the argmax result).
+
+    * input payload:
+      ```json
+      {
+        "endpoint_name": "p4-dog-breed-classification",
+        "request_dict": "{\"url\": \"https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/20113314/Carolina-Dog-standing-outdoors.jpg\"}"
+      }
+      ```
+    * output example  
+      `[56]`
+    * argmax:
+      ```python
+      response = json.loads(response['Body'].read().decode())
+      ## argmax of 2D list, equivlent to np.argmax(response, 1)
+      body = [max(range(len(row)), key=row.__getitem__) for row in response] 
+      ```
+  * Then, I configured the concurrency for both the endpoint and the Lambda function. The configuration balances performance and cost by setting the target value for `SageMakerVariantInvocationsPerInstance` to 100, assuming each instance can comfortably handle that many requests. This ensures the system doesn't scale too early or too late. The 10-second `scale-in` and `scale-out` cooldowns allow the system to quickly adapt to changes in traffic without overprovisioning or underprovisioning resources, making it responsive to both traffic spikes and drops. For Lambda concurrency, setting it between 50-100 ensures the function can handle bursts of requests without overwhelming the SageMaker endpoint, while still distributing the load efficiently across instances. This configuration offers a balanced, responsive approach to managing both traffic fluctuations and resource usage.
+
+    | Setting                          | Value                  | Explanation                                            |
+    |-----------------------------------|------------------------|--------------------------------------------------------|
+    | **Target Metric**                 | `SageMakerVariantInvocationsPerInstance` | Average of 100 invocations per instance, adjust as needed based on model capacity |
+    | **Scale-in Cooldown**             | 10 seconds             | Adjust quickly to drops in traffic, but avoid rapid fluctuations |
+    | **Scale-out Cooldown**            | 10 seconds             | React quickly to increased traffic, but avoid over-scaling |
+    | **Lambda Concurrency**            | 50-100 (depending on load) | Enough concurrency to keep up with the traffic, adjust based on traffic patterns |
+
 <br><br><br>
 
 ## **Course 5 Operationalizing Machine Learning on SageMaker**   
