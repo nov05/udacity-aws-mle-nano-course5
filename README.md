@@ -3,7 +3,7 @@
 
 <br><br><br>  
 
-## **👉 Project 4 (Course 5) Writeup Submission**  
+## **👉 Project 4 (Course 5) Submission - ✒️ Writeup**  
 
 * **Step 1: Training and deployment on Sagemaker**  
 
