@@ -41,12 +41,15 @@
 
   * Since the demo training code doesn't appear to use a GPU, we launched a `t2.xlarge` CPU EC2 instance for the training. Obviously, SageMaker is a fully managed service that saves the hassle of installing GPU drivers, CUDA, Python dependencies, and more. However, managing resources ourselves could potentially reduce costs.   
 
-  * Image: `Amazon Linux 2023 AMI`   
-    Intance type: `t2.xlarge` (w/o GPU)    
-    VPC: the default VPC (same as Step 1)    
-    Security group: `launch-wizard-1` (all inbound/outbound traffic allowed)  
-    Role name: `udacity-p4-ec2` (permissions: `AmazonElasticMapReduceforEC2Role`, SageMaker execution role, and S3 full access)  
-    Dependencies: `torch`, `torchvision`, `Pillow` (including `Numpy`), `tqdm`   
+    | Setting            | Value                                                                                     |
+    |--------------------|-------------------------------------------------------------------------------------------|
+    | **Image**          | `Amazon Linux 2023 AMI`                                                                   |
+    | **Instance Type**  | `t2.xlarge` (w/o GPU)                                                                     |
+    | **VPC**            | Default VPC (same as Step 1)                                                              |
+    | **Security Group** | `launch-wizard-1` (all inbound/outbound traffic allowed)                                  |
+    | **Role Name**      | `udacity-p4-ec2` (permissions: `AmazonElasticMapReduceforEC2Role`, SageMaker execution role, and S3 full access) |
+    | **Dependencies**   | `torch`, `torchvision`, `Pillow` (including `Numpy`), `tqdm`                               |
+
 
 <br>
 
@@ -54,8 +57,8 @@
 * **Step 4: Security and testing**  
 * **Step 5: Concurrency and auto-scaling**   
 
-  * Check the operation details and screenshots  
-    Check the deployment notebook and Lambda function code
+  * Check [the operation details and screenshots](https://docs.google.com/document/d/1G3gsNnlX4DH6cmPDoVVDAGZRfx8SA2e_YCKWsPYEw5E)  
+    Check [the deployment notebook](https://github.com/nov05/udacity-aws-mle-nano-course5/blob/main/p4_step3_deploy.ipynb) and [Lambda function code](https://github.com/nov05/udacity-aws-mle-nano-course5/blob/main/lambdafunction.py)  
 
   * I deployed the model as an endpoint called `p4-dog-image-classification`. It takes the endpoint name and an image URL as input, and outputs a prediction in the form of a label number (the argmax result).
 
