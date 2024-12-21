@@ -60,7 +60,7 @@
   * Check [the operation details and screenshots](https://docs.google.com/document/d/1G3gsNnlX4DH6cmPDoVVDAGZRfx8SA2e_YCKWsPYEw5E)  
     Check [the deployment notebook](https://github.com/nov05/udacity-aws-mle-nano-course5/blob/main/p4_step3_deploy.ipynb) and [Lambda function code](https://github.com/nov05/udacity-aws-mle-nano-course5/blob/main/lambdafunction.py)  
 
-  * I deployed the model as an endpoint called `p4-dog-image-classification`. It takes the endpoint name and an image URL as input, and outputs a prediction in the form of a label number (the argmax result).
+  * I deployed the model as an endpoint called `p4-dog-image-classification`, and created a Lambda function called `udacity-p4-lambda`. This function takes the endpoint name and an image URL as input, and outputs a prediction in the form of a label number (the argmax result).
 
     * input payload:
       ```json
