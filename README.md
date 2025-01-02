@@ -36,7 +36,7 @@
 
 * **Step 2: EC2 Training**   
 
-  * Check [the operation demo video](https://youtu.be/yBq0Fn7Z6RU)     
+  * Check [the operation demo video <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/icons/youtube_red_2000x2000.png" width=30>](https://youtu.be/yBq0Fn7Z6RU)     
     Check [the operation details and screenshots](https://docs.google.com/document/d/1rQNjzYOEKrZ3y9Jd0TLPLukJ3qLOw354xQA9wTCkTQ0)     
     Check [the demo training code](https://github.com/nov05/udacity-aws-mle-nano-course5/blob/main/ec2train1.py)   
 
