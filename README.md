@@ -1,5 +1,5 @@
 # 🟢 **udacity-aws-mle-nano-course5**
-**Udacity AWS Machine Learning Engineers Nanodegree** (ND189)    
+**Udacity AWS Machine Learning Engineers Nanodegree (ND189)**    
 
 <br><br><br>  
 
@@ -89,15 +89,17 @@
     | **Scale-out Cooldown**            | 10 seconds             | React quickly to increased traffic, but avoid over-scaling |
     | **Lambda Concurrency**            | 50-100 (depending on load) | Enough concurrency to keep up with the traffic, adjust based on traffic patterns |
 
+
 <br><br><br>
 
-## **Course 5 Operationalizing Machine Learning on SageMaker**   
+
+## 👉 **Course 5 Operationalizing Machine Learning on SageMaker**   
 
 * Course notes  
   [Google Docs](https://docs.google.com/document/d/1B-k7xFlayJ00NrplcPeRvgP8dxsMggOmTabE135bCEw)  
 
 * 2.15 Exercise: Lowering Costs with Spot Instances  
-  🏷️ [my demo video](https://youtu.be/Em-MJqLuH74)  
+  🏷️ [my demo video <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/icons/youtube_red_2000x2000.png" width=30>](https://youtu.be/Em-MJqLuH74)  
 
 * 3.5 Exercise: Multi-instance Distributed-data Training   
   [Overview](https://www.evernote.com/shard/s139/u/0/sh/904108fe-8c48-4ddc-bcd9-fbd28630d110/rNquyVO6wK0fK1BhUfqv7FZEdfCsv0wqHrl94n8oIcn1AX-qlKS3itkZ6w)   
@@ -117,9 +119,11 @@
 * 6.1 Course Project   
   [Introduction](https://www.evernote.com/shard/s139/u/0/sh/1db5a63a-b7d4-4f4b-8f83-b6f68e86dbc2/supBQKkZk60tY8YA6uYPBsHIJKuX6N9771fFguFETNqIZwsYHa1Z0fTtlA)  
 
+
 <br><br><br>    
 
-## **Logs**     
+
+## 👉 **Logs**     
 
 2024-12-20 project 4 submission  
 2024-12-09 repo created   
