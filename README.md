@@ -112,7 +112,7 @@
   🏷️ [notebook](https://github.com/nov05/udacity-aws-mle-nano-course5/blob/main/exercise_4.8/simpleendpoint1.ipynb)    
 
 * 4.16 Exercise: Feature Store   
-  🏷️ [my demo video](https://www.youtube.com/watch?v=FT41tM9cDVc)  
+  🏷️ [my demo video <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/icons/youtube_red_2000x2000.png" width=30>](https://www.youtube.com/watch?v=FT41tM9cDVc)  
   🏷️ [notebook](https://github.com/nov05/udacity-aws-mle-nano-course5/blob/main/exercise_4.16/New%20data%20flow%202024-12-11%2011_07_14%20PM.ipynb)  (The feature group data processing lacks the necessary ECR permissions.)   
   [notebook from Course 3 Lesson 4](https://github.com/nov05/udacity-nd009t-C2-Developing-ML-Workflow/blob/master/lesson4/exercises-solutions.ipynb) (The feature group data processing lacks the necessary Glue permissions.)  
 
